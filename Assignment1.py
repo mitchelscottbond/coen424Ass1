@@ -9,7 +9,7 @@ data_type = 'testing'
 filename = benchmark_type + '-' + data_type + '.csv'
 
 #Checking column of data using the Workload Metric
-workload_metric = "Memory"
+workload_metric = "CPU"
 def check_workload_metric(workload_metric):
     if workload_metric == "CPU":
         workload_column = 0
@@ -34,7 +34,7 @@ first_element_in_batch = batch_unit*(batch_ID-1)
 last_element_in_batch = first_element_in_batch + required_return_amount
 
 #data statistics
-data_analytics = "50p"
+data_analytics = "avg"
 #testing printing the batch size
     #tons = list(range(1000))
     #my_list = tons[first_element_in_batch:last_element_in_batch]
@@ -100,3 +100,9 @@ def perform_data_analytics(data_list, data_analytics):
 result = perform_data_analytics(data_list, data_analytics)
 print('results of data analytics')
 print(result)
+
+
+
+
+
+
