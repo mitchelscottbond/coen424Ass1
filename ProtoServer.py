@@ -31,6 +31,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             data_type = msg.dataType
             data_analytics = msg.dataAnalytics
             
+            #If benchmark_type is null, all the following code will crash so I close the script before the code crashes if that happens. 
             if benchmark_type =="":
                 exit()
             
