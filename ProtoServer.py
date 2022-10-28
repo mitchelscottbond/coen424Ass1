@@ -4,7 +4,7 @@ import numpy as np
 import protoFile_pb2
 import json
 
-#encode via latin-1
+
 HOST = "localhost"  # Standard loopback interface address (localhost)
 PORT = 50000  # Port to listen on (non-privileged ports are > 1023)
 
@@ -116,12 +116,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             analytics = perform_data_analytics(sorted_data_list, data_analytics)
             print('results of data analytics')
             print(analytics)
-
-            RFDmessage = {}
-            RFDmessage["RFWID"]=RFWID
-            RFDmessage["lastBatchID"]= last_batch_ID
-            RFDmessage["dataSamples"] =data_list
-            RFDmessage["dataAnalytics"]=analytics
 
             proto = protoFile_pb2.RFD() 
             proto.RFWID = RFWID
