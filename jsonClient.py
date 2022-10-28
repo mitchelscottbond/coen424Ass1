@@ -4,12 +4,15 @@ import json
 import csv
 import numpy as np
 
+#Global variables for my RFW
 benchmarkType = ""
 workloadMetric = ""
 global batchunit
 global batchid
 global batchsize
 data_type = ""
+
+#Performing checks on user inputs for the RFW
 print('Enter the RFW ID:')
 RFWID =  input()
 print("Enter bench mark type: 1 for 'DVD' or enter 2 for 'NDBench' for bench mark type")
@@ -91,7 +94,7 @@ print("Enter data analytics in the format of '99p', or '50p', or '10p', or '70p'
 analytics = input()
 
 
-
+#Creating my Request for workload dictionary.
 RFWmessage = {}
 RFWmessage["RFWID"]=RFWID
 RFWmessage["benchmarkType"]= benchMarkType
@@ -107,14 +110,10 @@ data_temp = json.dumps(request)
 HOST = "localhost"  # The server's hostname or IP address
 PORT = 65432  # The port used by the server
 
-#Code for if I want to open rfw.json and use it. 
-    #f=  open('RFW.json')
-    #m= json.load(f)
-    #data =json.dumps(m)
-print(data_temp)
+#Stripping unnecssary blackslashes and quotations that are not needed. 
 data_temp2 = data_temp.replace("\\", "")
 data = data_temp2.lstrip('"').rstrip('"')
-print(data)
+
 
 # Create a socket (SOCK_STREAM means a TCP socket)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -133,6 +132,3 @@ try:
 finally:
     sock.close()
 print(f"Received {received!r}")
-
-#print "Sent:     {}".format(data)
-#print "Received: {}".format(received)

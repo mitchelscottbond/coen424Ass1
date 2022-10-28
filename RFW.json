@@ -1,10 +1,10 @@
 {
-    "RFWID": "123ID",
-    "benchmarkType": "DVD",
-    "workloadMetric": "Memory",
+    "RFWID": "",
+    "benchmarkType": "",
+    "workloadMetric": "",
     "batchUnit": 10,
     "batchID": 2,
     "batchSize": 9,
-    "dataType": "testing",
-    "dataAnalytics": "99p"
+    "dataType": "",
+    "dataAnalytics": ""
 }
