@@ -1,0 +1,10 @@
+{
+      "RFWID": "Melvin",
+      "benchmarkType": "DVD",
+      "workloadMetric": "CPU",
+      "batchUnit": 10,
+      "batchID": 50,
+      "batchSize": 13,
+      "dataType": "testing",
+      "dataAnalytics": "99p"
+}

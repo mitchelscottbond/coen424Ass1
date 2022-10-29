@@ -1,0 +1,8 @@
+RFWID: "myRFW"
+benchmarkType: "NDBench"
+workloadMetric: "NetworkIn"
+batchUnit: 12
+batchID: 12
+batchSize: 12
+dataType: "training"
+dataAnalytics: "max"

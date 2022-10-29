@@ -1,9 +1,8 @@
 import socket
-import sys
-import json
-import csv
 import numpy as np
 import protoFile_pb2
+from google.protobuf import text_format
+import os
 
 benchmarkType = ""
 workloadMetric = ""
@@ -101,6 +100,13 @@ proto.batchSize = batchsize
 proto.dataType = data_type
 proto.dataAnalytics = analytics
 
+path1 = os.getcwd()
+filepath1 = path1 + '\ProtoBuff_Messages\RFW_proto.txt'
+with open(filepath1, 'w') as outfile1:
+    
+    text_format.PrintMessage(proto, outfile1)
+
+
 HOST = "localhost"  # The server's hostname or IP address
 PORT = 50000  # The port used by the server
 # Create a socket (SOCK_STREAM means a TCP socket)
@@ -122,3 +128,9 @@ try:
 finally:
     sock.close()
 print(f"Received {response!r}")
+
+path2 = os.getcwd()
+filepath2 = path2 + '\ProtoBuff_Messages\RFD_proto.txt'
+with open(filepath2, 'w') as outfile2:
+    
+    text_format.PrintMessage(response, outfile2)

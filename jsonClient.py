@@ -1,8 +1,7 @@
 import socket
-import sys
 import json
-import csv
 import numpy as np
+import os
 
 #Global variables for my RFW
 benchmarkType = ""
@@ -104,6 +103,13 @@ RFWmessage["batchID"] = batchid
 RFWmessage["batchSize"] = batchsize
 RFWmessage["dataType"] = data_type
 RFWmessage["dataAnalytics"]=analytics
+
+path = os.getcwd()
+filepath = path + '\RFW_RFD_Messages\RFW.json'
+with open(filepath, 'w') as outfile1:
+    
+    json.dump(RFWmessage, outfile1, indent = 6)
+
 request = json.dumps(RFWmessage)
 
 data_temp = json.dumps(request)
@@ -132,3 +138,12 @@ try:
 finally:
     sock.close()
 print(f"Received {received!r}")
+jsonobj = json.loads(received)
+
+path2 = os.getcwd()
+filepath2 = path2 + '\RFW_RFD_Messages\RFD.json'
+with open(filepath2, 'w') as outfile2:
+    
+    json.dump(jsonobj, outfile2, indent = 6)
+
+

@@ -2,6 +2,7 @@ import socket
 import json
 import csv
 import numpy as np
+import os
 
 #encode via latin-1
 HOST = "localhost"  # Standard loopback interface address (localhost)
@@ -36,7 +37,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             data_type = jsonobj['dataType']
             data_analytics = jsonobj['dataAnalytics']
 
-            #Creating the filename and checking which column to receive the data from.            
+            #Creating the filename and checking which column to receive the data from.         
             filename = benchmark_type + '-' + data_type + '.csv'
             def check_workload_metric(workload_metric):
                 if workload_metric == "CPU":
