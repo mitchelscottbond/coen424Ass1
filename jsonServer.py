@@ -109,6 +109,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             RFDmessage["RFWID"]=RFWID
             RFDmessage["lastBatchID"]= last_batch_ID
             RFDmessage["dataSamples"] =data_list
+            analytics = str(analytics)
             RFDmessage["dataAnalytics"]=analytics
 
             response = json.dumps(RFDmessage)

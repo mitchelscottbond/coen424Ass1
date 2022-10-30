@@ -1,8 +1,8 @@
-RFWID: "myRFW"
-benchmarkType: "NDBench"
-workloadMetric: "NetworkIn"
-batchUnit: 12
-batchID: 12
-batchSize: 12
-dataType: "training"
-dataAnalytics: "max"
+RFWID: "TestReportID"
+benchmarkType: "DVD"
+workloadMetric: "CPU"
+batchUnit: 10
+batchID: 2
+batchSize: 9
+dataType: "testing"
+dataAnalytics: "min"

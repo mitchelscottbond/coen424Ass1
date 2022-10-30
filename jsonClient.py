@@ -127,6 +127,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     # Connect to server and send data
     sock.connect((HOST, PORT))
+    print('This is the RFW below:')
     print(data)
     sock.send(data.encode('latin-1'))
 
@@ -137,6 +138,8 @@ try:
 
 finally:
     sock.close()
+
+print('This is the RFD received below:')
 print(f"Received {received!r}")
 jsonobj = json.loads(received)
 
